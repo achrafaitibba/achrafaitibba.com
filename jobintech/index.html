@@ -11,12 +11,10 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <!-- Font Awesome -->
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
       rel="stylesheet"
     />
-    <!-- Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
       rel="stylesheet"
@@ -27,19 +25,24 @@
       <nav>
         <ul class="nav justify-content-center">
           <li class="nav-item">
-            <a class="nav-link" href="#home">Home</a>
+            <a class="nav-link" href="#home" id="tr_home">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#about">About</a>
+            <a class="nav-link" href="#about" id="tr_about">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#resume">Resume</a>
+            <a class="nav-link" href="#resume" id="tr_resume">Resume</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#projects">Projects</a>
+            <a class="nav-link" href="#projects" id="tr_projects">Projects</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#contact">Contact</a>
+            <a class="nav-link" href="#contact" id="tr_contact">Contact</a>
+          </li>
+          <li id="translate">
+            <button type="button" class="btn btn-outline-dark bg-body-tertiary">
+              <span id="lang">FR</span>
+            </button>
           </li>
         </ul>
       </nav>
@@ -47,11 +50,11 @@
     <main>
       <div class="about section" id="about">
         <h1 id="name">Achraf Ait Ibba</h1>
-        <p>
+        <p id="tr_intro">
           Hi, my name is Achraf, software engineering student.
-          <br />My expertise as a Full-Stack developer lies mainly in the
+          <br/>My expertise as a Full-Stack developer lies mainly in the
           back-end using JAVA (Spring-Boot), while I also have some proficiency
-          in the front-end. <br />
+          in the front-end. <br/>
           I am passionate about software development I wanted to learn about
           everything including low-level stuff from zero to mastering it "HERO"
           hh. Unfortunately I can't master everything, so I have to go deep
@@ -69,13 +72,10 @@
           <a href="https://www.github.com/achrafaitibba" target="_blank"
             ><i class="fab fa-github -f"></i
           ></a>
-          <a href="https://www.achrafaitibba.com/" target="_blank"
-            ><i class="fab fa-twitter -f"></i
-          ></a>
         </div>
       </div>
       <div class="resume section" id="resume">
-        <div class="section-name"><h1>Resume</h1></div>
+        <div class="section-name" ><h1 id="tr-resume1">Resume</h1></div>
         <div class="resume-section">
           <h4>Education</h4>
           <div class="stepper d-flex flex-column mt-5 ml-2">
@@ -85,11 +85,11 @@
                 <div class="line h-100"></div>
               </div>
               <div>
-                <h5 class="lead">
+                <h5 class="lead" id="tr_edu1">
                   MASTER IN SOFTWARE ENGINEERING & INFORMATION SYSTEMS MANAGMENT
                 </h5>
-                <h5 class="lead">ENSA, Kenitra, Oct 2023 -Jul 2025</h5>
-                <p class="lead pb-2">
+                <h5 class="lead" id="tr_loc1">ENSA, Kenitra, Oct 2023 -Jul 2025</h5>
+                <p class="lead pb-2" id="tr_desc1">
                   Studying Software Engineering at the National School of
                   Applied Sciences, specializing in mastering a diverse range of
                   cutting-edge technologies, including Java, Node.js, front-end
@@ -105,9 +105,9 @@
                 <div class="line h-100"></div>
               </div>
               <div>
-                <h5 class="lead">BACHELOR IN COMPUTER SYSTEMS ENGINEERING</h5>
-                <h5 class="lead">ENSA, Kenitra, Sep 2022 -Jul 2023</h5>
-                <p class="lead pb-2">
+                <h5 class="lead" id="tr_edu2">BACHELOR IN COMPUTER SYSTEMS ENGINEERING</h5>
+                <h5 class="lead"id="tr_loc2">ENSA, Kenitra, Sep 2022 -Jul 2023</h5>
+                <p class="lead pb-2" id="tr_desc2">
                   Studied Computer Science at the National School of Applied
                   Sciences, specializing in web technologies, networking, and
                   low-level programming like C. Built a solid foundation in web
@@ -121,9 +121,9 @@
                 <div class="rounded-circle py-2 px-3 text-dark mb-1">/</div>
               </div>
               <div>
-                <h5 class="lead">SPECIALIZED TECHNICIAN, IT DEVELOPMENT</h5>
-                <h5 class="lead">ISTA ntic, RABAT, Sep 2020 - Aug 2022</h5>
-                <p class="lead pb-2">
+                <h5 class="lead" id="tr_edu3">SPECIALIZED TECHNICIAN, IT DEVELOPMENT</h5>
+                <h5 class="lead"id="tr_loc3">ISTA ntic, RABAT, Sep 2020 - Aug 2022</h5>
+                <p class="lead pb-2" id="tr_desc3">
                   Studied at the Specialized Institute of Applied Technology,
                   specializing in web technologies (HTML, CSS, JavaScript), Java
                   JEE, Java Swing for desktop applications, Android for mobile
@@ -299,18 +299,20 @@
       </div>
       <div class="contact section" id="contact">
         <div class="section-name"><h1>Contact</h1></div>
-        <form class="contact-form" style="width: 26rem">
+        <form class="contact-form" style="width: 26rem"  method="POST">
           <div data-mdb-input-init class="form-outline mb-4">
             <input
               type="text"
               class="form-control"
               placeholder="Type your name"
+              name="name"
             />
           </div>
           <div data-mdb-input-init class="form-outline mb-4">
             <input
               type="email"
               class="form-control"
+              name="email"
               placeholder="Type your email"
             />
           </div>
@@ -318,12 +320,13 @@
             <textarea
               class="form-control"
               rows="4"
+              name="message"
               placeholder="Type your message"
             ></textarea>
           </div>
           <button
             data-mdb-ripple-init
-            type="button"
+            type="submit"
             class="btn btn-primary btn-block mb-4"
           >
             Send
@@ -332,12 +335,16 @@
       </div>
     </main>
     <footer class="bg-body-tertiary text-center text-lg-start">
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
-          © 2024 Copyright:
-          <a class="text-body" href="https://achrafaitibba.com/">achrafaitibba.com</a>
-        </div>
-        <!-- Copyright -->
-      </footer>
+      <div
+        class="text-center p-3"
+        style="background-color: rgba(0, 0, 0, 0.05)"
+      >
+        © 2024 Copyright:
+        <a class="text-body" href="https://achrafaitibba.com/"
+          >achrafaitibba.com</a
+        >
+      </div>
+    </footer>
     <script src="script.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
