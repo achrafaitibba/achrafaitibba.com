@@ -20,7 +20,12 @@ body {
 nav {
     margin-top: 20px;
 }
-
+.btn {
+    border: 1px solid red;
+}
+.btn:hover span {
+    color:black;
+}
 main {
     width: 70%;
     margin: auto;
