@@ -5,8 +5,8 @@
     --main-text-color: rgb(219, 219, 219);
     --main-text-decoration-2: rgb(0, 100, 146);
     --main-font: 'Courier New', Courier, monospace;
-    --main-titles-size: 3.2em;
-    --main-text-size: 1.2em;
+    --main-titles-size: 60px;
+    --main-text-size: 17px;
     font-family: var(--main-font);
 }
 
@@ -162,12 +162,73 @@ main {
 .contact-form .form-outline input[type="text"],
 .contact-form .form-outline input[type="email"],
 .contact-form .form-outline textarea {
-  background-color: rgba(0, 0, 0, 0.2);
-  color: var(--main-text-color);
+    background-color: rgba(0, 0, 0, 0.2);
+    color: var(--main-text-color);
 }
 
 .contact-form .form-outline input[type="text"]::placeholder,
-  .contact-form .form-outline input[type="email"]::placeholder,
-  .contact-form .form-outline textarea::placeholder {
-    color: var(--main-text-color); 
-  }
+.contact-form .form-outline input[type="email"]::placeholder,
+.contact-form .form-outline textarea::placeholder {
+    color: var(--main-text-color);
+}
+
+/* queries */
+
+@media (max-width: 767px) {
+    main {
+        width: 90%;
+    }
+
+    .section {
+        margin-top: 50px;
+    }
+
+    .about {
+        height: auto;
+        font-size: calc(var(--main-text-size) - 2px);
+        margin-bottom: 50px;
+    }
+
+    #about #name {
+        font-size: calc(var(--main-titles-size) - 10px);
+    }
+
+    .section-name {
+        font-size: calc(var(--main-titles-size) - 10px);
+        margin-top: 100px;
+    }
+
+    .resume-section h4 {
+        float: none;
+        margin: 20px 0;
+    }
+
+    .skills {
+        margin-top: 50px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    main {
+        width: 80%;
+    }
+
+    .section {
+        margin-top: 75px;
+    }
+
+    .about {
+        height: auto;
+        font-size: calc(var(--main-text-size) - 1px);
+        margin-bottom: 75px;
+    }
+
+    #about #name {
+        font-size: calc(var(--main-titles-size) - 5px);
+    }
+
+    .section-name {
+        font-size: calc(var(--main-titles-size) - 5px);
+        margin-top: 125px;
+    }
+}
